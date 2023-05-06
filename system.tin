@@ -1,0 +1,7 @@
+#nop vim: set filetype=tintin:;
+#function {mkdir} {
+    #local dir {%1};
+    #local output {};
+    #script output {mkdir -p $dir 2>/dev/null && test -d $dir && echo true || echo false};
+    #return $output[1];
+};

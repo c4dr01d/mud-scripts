@@ -1,0 +1,13 @@
+#nop vim: set filetype=tintin:;
+#alias {load-file} {
+    #local file {%1};
+    #local output {};
+    #script output {test -f $file && echo true || echo false};
+    #if { "$output[1]" == "true" } {
+        #read $file;
+        #return;
+    };
+};
+load-file utils.tin;
+load-file function.tin;
+load-file system.tin;
