@@ -27,9 +27,3 @@
     };
     #return {false};
 };
-#function {existsFile} {
-    #local file {%1};
-    #local output {};
-    #script output {test -f $file && echo true || echo false};
-    #return $output[1];
-};
