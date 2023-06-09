@@ -1,0 +1,4 @@
+#nop vim: set filetype=tintin:;
+#alias {load-env} {
+    #read env.tin;
+};

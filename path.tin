@@ -1,0 +1,6 @@
+#nop vim: set filetype=tintin:;
+#nop 全真扫地路径;
+#nop 顺行;
+sd;s;sd;sd;se;s;se
+#nop 逆行;
+nw;n;nw;nu;nu;n;nu

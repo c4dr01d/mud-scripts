@@ -1,0 +1,10 @@
+#nop vim: set filetype=tintin:;
+#action {^你挥舞着大扫把，开始清扫这里的落叶。$} {
+    #delay 5 sao;
+};
+#action {^你胡乱播扫，把落叶弄的到处都是。$} {
+    sao;
+};
+#action {^这里已经被打扫的一尘不染了。$} {
+    #echo 打扫完毕，去下一阶吧。;
+};
