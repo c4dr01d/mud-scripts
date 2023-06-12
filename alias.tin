@@ -1,4 +1,5 @@
 #nop vim: set filetype=tintin:;
-#alias {load-env} {
-    #read env.tin;
+#alias {take-quest} {
+    l notice;
 };
+#alias {tq} {take-quest;};

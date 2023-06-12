@@ -1,10 +1,124 @@
 #nop vim: set filetype=tintin:;
-#action {^你挥舞着大扫把，开始清扫这里的落叶。$} {
-    #delay 5 sao;
+#nop 全真-扫地任务;
+#action {你挥舞着大扫把，开始清扫这里的落叶。} {
+    #delay {3} {
+        sao;
+    };
 };
-#action {^你胡乱播扫，把落叶又弄的到处都是。$} {
+#action {你胡乱播扫，把落叶又弄的到处都是。} {
     sao;
 };
-#action {^这里已经被打扫的一尘不染了。$} {
+#action {这里已经被打扫的一尘不染了。} {
     #echo 打扫完毕，去下一阶吧。;
+};
+#nop 全真-天尊殿任务;
+#nop 花圃;
+#action {速去药圃帮助老者，不得有误。} {
+    #7 n;
+    ask lao zhe about 帮忙;
+};
+#action {最近药圃要收药，缺乏人手，你帮我收齐(shouqi)十株药材吧。} {
+    #delay {3} {
+        shouqi;
+    };
+};
+#action {这株可以入药，你把它放入自己的背包。} {
+    #delay {3} {
+        shouqi;
+    };
+};
+#action {这株完全烂掉了，你把它扔在一边。} {
+    #delay {3} {
+        shouqi;
+    };
+};
+#action {你凑齐十株药材，全部交给了老者。} {
+    #delay {3} {
+        n;s;#7 s;
+    };
+};
+#action {你去奇草挖(wa)一株草药栽种(zai)到这里吧。} {
+    #2 e;
+    wa;
+};
+#action {你挖出了一棵完整的药草。} {
+    #2 w;
+    zai;
+};
+#action {药草被移栽到这里，终于成活了。} {
+    n;s;
+    #delay {3} {
+        #7 s;
+    };
+};
+#action {你去奇草那里，给那些草施(shifei)点肥。} {
+    #2 e;
+    #delay {3} {
+        get fen tong;
+        #2 n;
+    };
+    #delay {3} {
+        yao;
+        #2 s;
+    };
+    #delay {3} {
+        shifei;
+    };
+    #delay {3} {
+        drop fen tong;
+        #2 w;
+    };
+    #delay {3} {
+        #7 s;
+    };
+};
+#action {你去奇草那里，给那些草浇(jiao)点水，别干死了。} {
+    #2 e;
+    #delay {3} {
+        get shui tong;
+        n;
+    };
+    #delay {3} {
+        dashui;
+        s;
+    };
+    #delay {3} {
+        jiao shui;
+    };
+    #delay {3} {
+        drop shui tong;
+        #2 w;
+    };
+    #delay {3} {
+        #7 s;
+    };
+};
+#nop 校经房;
+#action {速去校经房帮助道童，不得有误。} {
+    n;w;
+    ask daotong about 帮忙;
+};
+#action {这本誊抄的道德经有个字似乎模糊了，你帮我找(zhao)出来吧。} {
+    zhao;
+};
+#action {你一眼就发现了错误所在，太明显了，去把道德经交给道童吧。} {
+    give daode jing to daotong;
+};
+#action {道童接过你手里的书，大喜道：就是我的！} {
+    #delay {3} {
+        e;s;
+    };
+};
+#action {我肚子不太舒服，你能帮我在这里誊写(write)完道德经吗？} {
+    #delay {3} {
+        write;
+    };
+};
+#action {你写完了一页，赶紧再蘸墨继续抄誊。} {
+    #delay {3} {
+        write;
+    };
+};
+#action {道童交给你的誊抄任务完成了。} {
+    e;w;e;s;
 };
