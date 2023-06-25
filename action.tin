@@ -32,6 +32,11 @@
         shouqi;
     };
 };
+#action {你不小心把挖出的药草根茎都弄伤，不能要了。} {
+    #delay {3} {
+        shouqi;
+    };
+};
 #action {你凑齐十株药材，全部交给了老者。} {
     #delay {3} {
         n;s;#7 s;
@@ -39,14 +44,27 @@
 };
 #action {你去奇草挖(wa)一株草药栽种(zai)到这里吧。} {
     #2 e;
-    wa;
+    #delay {3} {
+        wa;
+    };
 };
 #action {你挖出了一棵完整的药草。} {
-    #2 w;
-    zai;
+    #delay {3} {
+        #2 w;
+    };
+    #delay {3} {
+        zai;
+    };
+};
+#action {土壤有些松动，移栽并未成功。} {
+    #delay {3} {
+        zai;
+    };
 };
 #action {药草被移栽到这里，终于成活了。} {
-    n;s;
+    #delay {3} {
+        n;s;
+    };
     #delay {3} {
         #7 s;
     };
@@ -66,10 +84,10 @@
     };
     #delay {3} {
         drop fen tong;
-        #2 w;
     };
-    #delay {3} {
-        #7 s;
+    #delay {5} {
+        #2 w;
+	#7 s;
     };
 };
 #action {你去奇草那里，给那些草浇(jiao)点水，别干死了。} {
@@ -87,9 +105,9 @@
     };
     #delay {3} {
         drop shui tong;
-        #2 w;
     };
-    #delay {3} {
+    #delay {5} {
+        #2 w;
         #7 s;
     };
 };
